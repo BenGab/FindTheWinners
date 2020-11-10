@@ -52,7 +52,6 @@ namespace FindClusters
         public int Do()
         {
             int result = 0;
-            int maxClusterSize = 1;
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
@@ -60,9 +59,8 @@ namespace FindClusters
                     if (!visited[i, j])
                     {
                         DepthFirstSearch(i, j, grid[i, j]);
-                        ++connectedComponents;
-                        result += connectedComponents * componentSize * componentSize;
-                        componentSize = 0;
+                        result += 1 * componentSize * componentSize;
+                        componentSize = 1;
                     }
                 }
             }

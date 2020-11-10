@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.IO;
 
 namespace FindClusters
 {
@@ -7,8 +9,19 @@ namespace FindClusters
         static void Main(string[] args)
         {
 
-            ConnectedComponents alg = new ConnectedComponents(3, 3, new int[,] { { 1, 1, 1 }, { 2, 2, 2 }, { 2, 2, 1 } });
-            Console.WriteLine(alg.Do());
+            TestCaseLoader loader = new TestCaseLoader("input.txt");
+            var testcases = loader.GenerateTestCases();
+
+            using (StreamWriter writer = new StreamWriter("output.txt"))
+            {
+                int i = 0;
+                foreach (var item in testcases)
+                {
+                    var result = item.Do();
+                    Console.WriteLine($"Case #{++i}: {result}");
+                    writer.WriteLine($"Case #{++i}: {result}");
+                }
+            }
         }
     }
 }
