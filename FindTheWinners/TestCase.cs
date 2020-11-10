@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 
 namespace FindTheWinners
@@ -22,7 +23,7 @@ namespace FindTheWinners
             this.testDatas = testDatas;
         }
 
-        public void Run()
+        public void Run(StreamWriter writer)
         {
             //Presentation form DS&A based solution
             //Dictionary<int, decimal> sumOfWinnings = new Dictionary<int, decimal>();
@@ -50,8 +51,8 @@ namespace FindTheWinners
 
             var achievement = winnersum.Where(x => x.Amount >= winLimit).Select(x => x.PlayerId).ToList();
             var result = achievement.Count > 0 ? String.Join(' ', achievement) : "NO";
-
             Console.WriteLine($"Case #{testcaseId}: {result}");
+            writer.WriteLine($"Case #{testcaseId}: {result}");
         }
     }
 }

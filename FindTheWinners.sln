@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindTheWinners", "FindTheWinners\FindTheWinners.csproj", "{DE9412BF-E7FE-41DF-907C-35B685C01D9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindClusters", "FindClusters\FindClusters.csproj", "{DA22EBDE-52E9-4C20-86E6-BDF8F635695E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DE9412BF-E7FE-41DF-907C-35B685C01D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE9412BF-E7FE-41DF-907C-35B685C01D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE9412BF-E7FE-41DF-907C-35B685C01D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA22EBDE-52E9-4C20-86E6-BDF8F635695E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA22EBDE-52E9-4C20-86E6-BDF8F635695E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA22EBDE-52E9-4C20-86E6-BDF8F635695E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA22EBDE-52E9-4C20-86E6-BDF8F635695E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace FindTheWinners
 {
@@ -7,8 +8,11 @@ namespace FindTheWinners
     {
         static void Main(string[] args)
         {
-            TestCaseLoader loader = new TestCaseLoader(Convert.ToInt32(Console.ReadLine().Trim()));
-            loader.GenerateTestCases().ForEach(x=> x.Run());
+            TestCaseLoader loader = new TestCaseLoader("input.txt");
+            using (StreamWriter writer = new StreamWriter("output.txt"))
+            {
+                loader.GenerateTestCases().ForEach(x => x.Run(writer));
+            }
         }
     }
 }
