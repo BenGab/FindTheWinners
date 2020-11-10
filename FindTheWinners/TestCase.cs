@@ -7,20 +7,22 @@ namespace FindTheWinners
 {
     public class TestCase
     {
+        private readonly int testcaseId;
         private readonly int numberOfWinnings;
         private readonly int numberOfPlayers;
-        private readonly decimal winLimit;
+        private readonly double winLimit;
         private readonly ICollection<TestData> testDatas;
 
-        public TestCase(int numberOfWinnings, int numberOfPlayers, decimal winLimit, ICollection<TestData> testDatas)
+        public TestCase(int testcaseId, int numberOfWinnings, int numberOfPlayers, double winLimit, ICollection<TestData> testDatas)
         {
+            this.testcaseId = testcaseId;
             this.numberOfWinnings = numberOfWinnings;
             this.numberOfPlayers = numberOfPlayers;
             this.winLimit = winLimit;
             this.testDatas = testDatas;
         }
 
-        public void Run(int testCaseId)
+        public void Run()
         {
             //Presentation form DS&A based solution
             //Dictionary<int, decimal> sumOfWinnings = new Dictionary<int, decimal>();
@@ -49,7 +51,7 @@ namespace FindTheWinners
             var achievement = winnersum.Where(x => x.Amount >= winLimit).Select(x => x.PlayerId).ToList();
             var result = achievement.Count > 0 ? String.Join(' ', achievement) : "NO";
 
-            Console.WriteLine($"Case #{testCaseId}: {result}");
+            Console.WriteLine($"Case #{testcaseId}: {result}");
         }
     }
 }
