@@ -120,7 +120,9 @@ namespace FindClusters
                         
                     }
                 }
+                DisplayGrid();
                 FallDown();
+                DisplayGrid();
                 --maxNum;
             }
 
