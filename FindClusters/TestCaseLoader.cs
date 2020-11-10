@@ -25,6 +25,7 @@ namespace FindClusters
                 string[] testCaseData = content[startIndex].Trim().Split(' ');
                 int col = int.Parse(testCaseData[0]);
                 int row = int.Parse(testCaseData[1]);
+                int mNum = int.Parse(testCaseData[2]);
                 int[,] testData = new int[row,col];
                 ++startIndex;
 
@@ -38,7 +39,7 @@ namespace FindClusters
                     ++startIndex;
                 }
 
-                result.Add(new ConnectedComponents(col, row, testData));
+                result.Add(new ConnectedComponents(col, row, testData, mNum));
             }
 
             return result;
